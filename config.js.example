@@ -2,6 +2,5 @@ module.exports = {
   url: "https://stream.watsonplatform.net/text-to-speech/api",
   apiKey: "6paWqKGVsdsjodosd09879987987hkhkjh",
   voice: "pt-BR_IsabelaV3Voice",
-  // fonte: https://twitter.com/jairbolsonaro/status/1169629029147664385
-  text: "Presidentes com 'postura' foram responsáveis pela destruição do Brasil que estamos reconstruindo. Enquanto se preocuparam com palavras bonitas e etiqueta, esqueceram de pegar firme contra a criminalidade, a corrupção, a destruição da família e os ataques à soberania do Brasil."
+  port: 3000
 };
