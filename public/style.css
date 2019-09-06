@@ -1,0 +1,48 @@
+#text {
+  width: 600px;
+  height: 100px;
+  font-family: sans-serif;
+  font-size: 14px;
+  border: 1px solid #888;
+  padding: 5px;
+}
+
+#load-time {
+  margin: 7px 0 0 0;
+}
+
+#loading {
+  position: absolute;
+  border: 1px solid #888;
+  width: 614px;
+  background: #fff;
+  text-align: center;
+}
+
+button {
+  width: 612px;
+  padding: 10px;
+  background: #fff;
+  border: 1px solid #888;
+}
+
+button:hover {
+  cursor: pointer;
+  color: #fafafa;
+  background: #444;
+}
+
+audio {
+  width: 613px;
+  margin: 6px 0 0 0;
+  box-shadow: #666 0px 1px 3px;
+  border-radius: 30px;
+}
+
+.enable {
+  display: block;
+}
+
+.disable {
+  display: none;
+}

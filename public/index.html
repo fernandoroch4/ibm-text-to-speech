@@ -6,43 +6,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>TextToSpeech - IBM</title>
-  <style>
-    #text {
-      width: 600px;
-      height: 100px;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <textarea id="text" name="text" rows="20" cols="100"></textarea>
-  <br>
-  <button id="bt-submit">Synthesize</button>
-  <br>
-  <audio hidden id="audio" controls></audio>
+  <header>
+    <h2>IBM - Text To Speech</h2>
+    <p>Put your text below and wait to load the audio player</p>
+  </header>
+  <div class="disable" id="loading"><img src="loading.gif" alt="Loading Gif"></div>
+  <textarea id="text" name="text" rows="20" cols="100"></textarea><br>
+  <button id="bt-submit">Synthesize</button><br>
+  <audio class="disable" id="audio" controls></audio>
+  <div class="disable" id="load-time"></div>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <script>
-    const element = document.getElementById('bt-submit');
-    element.addEventListener('click', async () => {
-      const inputText = document.getElementById('text');
-
-      if (inputText.value) {
-        const text = String(inputText.value);
-        axios({
-          method: 'POST',
-          url: 'synthesize',
-          data: { text }
-        }).then(data => {
-          const audioElement = document.getElementById('audio');
-          audioElement.setAttribute('src', 'text.wav');
-          audioElement.removeAttribute('hidden');
-        })
-          .catch (err => console.error(err));
-      } else {
-        alert('Please, type a text inside textarea to synthesize.');
-      }
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 
 </html>
