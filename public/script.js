@@ -1,36 +1,37 @@
+const loadginElement = document.getElementById('loading');
+const audioElement = document.getElementById('audio');
+
+function createElements() {
+  //IBM
+  const ibmElement = document.getElementById('ibm');
+  ibmElement.setAttribute('src', 'ibm.wav');
+
+  //Azure
+  const azureElement = document.getElementById('azure');
+  azureElement.setAttribute('src', 'azure.wav');
+
+  audioElement.setAttribute('class', 'enable');
+  loadginElement.setAttribute('class', 'disable');
+}
+
 (() => {
-  const element = document.getElementById('bt-submit');
-  const audioElement = document.getElementById('audio');
-  const loadTimeElement = document.getElementById('load-time');
-  const loadginElement = document.getElementById('loading');
+  const element = document.getElementById('bt-submit'); 
 
   element.addEventListener('click', () => {
     const inputText = document.getElementById('text');
 
     if (inputText.value) {
       loadginElement.setAttribute('class', 'enable');
-      const startTime = Date.now();
 
       if (audioElement.src !== "" ) {
         audioElement.setAttribute('class', 'disable');
-        loadTimeElement.setAttribute('class', 'disable');
-        loadTimeElement.innerHTML = '';
       }
       const text = String(inputText.value);
       axios({
         method: 'POST',
         url: 'synthesize',
         data: { text }
-      }).then(data => {
-        audioElement.setAttribute('src', 'text.wav');
-        audioElement.setAttribute('class', 'enable');
-        const endTime = Date.now();
-        const loadText = 'Load in: ' + (endTime - startTime) / 1000 + ' seconds';
-        const loadTime = document.createTextNode(loadText);
-        loadTimeElement.appendChild(loadTime);
-        loadTimeElement.setAttribute('class', 'enable');
-        loadginElement.setAttribute('class', 'disable');
-      })
+      }).then(data => createElements())
         .catch(err => {
           console.error(err);
           alert('Ops, something wrong...');

@@ -5,20 +5,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>TextToSpeech - IBM</title>
+  <title>TextToSpeech - IBM vs Azure</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
   <header>
-    <h2>IBM - Text To Speech</h2>
+    <h2>IBM vs Azure - Text To Speech</h2>
     <p>Put your text below and wait to load the audio player</p>
   </header>
   <div class="disable" id="loading"><img src="loading.gif" alt="Loading Gif"></div>
   <textarea id="text" name="text" rows="20" cols="100"></textarea><br>
   <button id="bt-submit">Synthesize</button><br>
-  <audio class="disable" id="audio" controls></audio>
-  <div class="disable" id="load-time"></div>
+  <div id="audio" class="disable">
+    <table>
+      <thead>
+        <tr>
+            <th>IBM</td>
+            <th>Azure</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><audio id="ibm" controls></audio></div></td>
+          <td><audio id="azure" controls></audio></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="script.js"></script>
 </body>
