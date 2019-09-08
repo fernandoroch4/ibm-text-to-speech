@@ -33,10 +33,11 @@ button:hover {
 }
 
 audio {
-  width: 613px;
+  width: 299px;
   margin: 6px 0 0 0;
   box-shadow: #666 0px 1px 3px;
   border-radius: 30px;
+  padding: 2px;
 }
 
 .enable {
@@ -45,4 +46,10 @@ audio {
 
 .disable {
   display: none;
+}
+
+table, th, td {
+  border: 1px solid #888;
+  border-collapse: collapse;
+  margin: 5px 0 0 0;
 }

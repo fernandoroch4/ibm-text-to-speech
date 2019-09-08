@@ -1,2 +1,2 @@
 # ibm-text-to-speech
-Using IBM Text To Speech to speech a text
+Using IBM and Azure to compare speech to text API

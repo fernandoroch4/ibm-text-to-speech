@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const config = require('./config');
-const synthesize = require('./synthesize');
+const synthesize = require('./provider');
 
 const app = express();
 app.use(cors());
@@ -14,7 +14,8 @@ app.post('/synthesize', async (req, res) => {
 
     if (text === undefined) res.sendStatus(400);
 
-    await synthesize(text);
+    await synthesize.ibm(text);
+    await synthesize.azure(text);
     res.sendStatus(200);    
   } catch (error) {
     console.error(error);
